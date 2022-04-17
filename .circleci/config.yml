@@ -24,7 +24,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npx ng build --prod --build-optimizer --no-progress
-      - run: npx ng test
+      # - run: npx ng test => No Tests Available => Think About Cypress Tests for Production Release
       - run:
           command: |
             docker build -t istioaksregistry.azurecr.io/customer-portal-ui:latest .
