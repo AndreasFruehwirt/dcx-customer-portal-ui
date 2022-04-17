@@ -24,7 +24,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npx ng build --prod --build-optimizer --no-progress
-      - run: npx ng test --single-run --no-progress
+      - run: npx ng test
       - run:
           command: |
             docker build -t istioaksregistry.azurecr.io/customer-portal-ui:latest .
